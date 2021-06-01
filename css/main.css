@@ -1,0 +1,37 @@
+
+
+/*              */
+/* header start */
+/*              */
+
+header{
+  width: 100%;
+  height: 92px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../img/green_00096.jpeg");
+  color: #fefefe;
+}
+header #title_container #title{
+  font-size: 24px;
+}
+header #control_container{
+  display: flex;
+}
+header #control_container #icon-container i{
+  font-size: 30px;
+}
+header #control_container #icon-container{
+  width: 58px;
+  height: 58px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px;
+  border-radius: 50%;
+}
+/*              */
+/* header end   */
+/*              */

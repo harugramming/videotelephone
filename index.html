@@ -4,11 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.webrtc.ecl.ntt.com/skyway-4.4.1.js"></script>
-  <title>SkyWayチュートリアル</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>通話アプリ</title>
 </head>
 <body>
+  <header>
+    <div id="title_container">
+      <div id="title">通話アプリ</div>
+    </div>
+    <div id="control_container">
+      <div id="icon-container">
+        <i class="fas fa-microphone"></i>
+        <!-- <i class="fas fa-microphone-slash"></i> -->
+      </div>
+      <div id="icon-container">
+        <i class="fas fa-video"></i>
+        <!-- <i class="fas fa-video-slash"></i> -->
+      </div>
+      <div id="icon-container">
+        <i class="fas fa-volume-up"></i>
+        <!-- <i class="fas fa-volume-mute"></i> -->
+      </div>
+    </div>
+    <div>
+      あなたの番号：<p id="my-id"></p>
+    </div>
+  </header>
   <video id="my-video" width="400px" autoplay muted playsinline></video>
-  <p id="my-id"></p>
+  
   <input id="their-id"></input>
   <button id="make-call">発信</button>
   <video id="their-video" width="400px" autoplay playsinline></video>
