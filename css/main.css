@@ -19,10 +19,10 @@ header #title_container #title{
 header #control_container{
   display: flex;
 }
-header #control_container #icon-container i{
+header #control_container .icon-container i{
   font-size: 30px;
 }
-header #control_container #icon-container{
+header #control_container .icon-container{
   width: 58px;
   height: 58px;
   margin: 8px;

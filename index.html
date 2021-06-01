@@ -16,15 +16,15 @@
       <div id="title">通話アプリ</div>
     </div>
     <div id="control_container">
-      <div id="icon-container">
+      <div id="js-toggle-microphone" class="icon-container">
         <i class="fas fa-microphone"></i>
         <!-- <i class="fas fa-microphone-slash"></i> -->
       </div>
-      <div id="icon-container">
+      <div id="js-toggle-camera" class="icon-container">
         <i class="fas fa-video"></i>
         <!-- <i class="fas fa-video-slash"></i> -->
       </div>
-      <div id="icon-container">
+      <div id="js-toggle-volume" class="icon-container">
         <i class="fas fa-volume-up"></i>
         <!-- <i class="fas fa-volume-mute"></i> -->
       </div>
@@ -39,38 +39,64 @@
   <button id="make-call">発信</button>
   <video id="their-video" width="400px" autoplay playsinline></video>
   
-  <div class="toggle-mute">
-    <button id="js-toggle-camera">Toggle Camera</button>
-    <span id="camera-status"></span>
-    <br>
-  
-    <button id="js-toggle-microphone">Toggle Microphone</button>
-    <span id="microphone-status"></span>
-    <br>
-  </div>
 </body>
 </html>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 
+// カメラ、マイク、音声のON,OFF切り替え
   const toggleCamera = document.getElementById('js-toggle-camera');
   const toggleMicrophone = document.getElementById('js-toggle-microphone');
-  const cameraStatus = document.getElementById('camera-status');
-  const microphoneStatus = document.getElementById('microphone-status');
+  const toggleVolume = document.getElementById('js-toggle-volume');
 
   toggleCamera.addEventListener('click', () => {
     const videoTracks = localStream.getVideoTracks()[0];
     videoTracks.enabled = !videoTracks.enabled;
-    cameraStatus.textContent = `カメラ${videoTracks.enabled ? 'ON' : 'OFF'}`;
   });
 
   toggleMicrophone.addEventListener('click', () => {
     const audioTracks = localStream.getAudioTracks()[0];
     audioTracks.enabled = !audioTracks.enabled;
-    microphoneStatus.textContent = `マイク${audioTracks.enabled ? 'ON' : 'OFF'}`;
+  });
+  toggleVolume.addEventListener('click', () => {
+    const their_videoTracks = document.getElementById('their-video');
+    if(their_videoTracks){
+      their_videoTracks.muted = false;
+    }else{
+      their_videoTracks.muted = true;
+    }
   });
 
+  // ボタンのレイアウトの変更
+  //fontawesomeのクラスの付与によってレイアウトを変更
+  $('#js-toggle-microphone').on('click',function(){
+    if($('#js-toggle-microphone i').hasClass('fa-microphone')){
+      $('#js-toggle-microphone i').removeClass('fa-microphone');
+      $('#js-toggle-microphone i').addClass('fa-microphone-slash');
+    }else{
+      $('#js-toggle-microphone i').addClass('fa-microphone');
+      $('#js-toggle-microphone i').removeClass('fa-microphone-slash');
+    }
+  });
+  $('#js-toggle-camera').on('click',function(){
+    if($('#js-toggle-camera i').hasClass('fa-video')){
+      $('#js-toggle-camera i').removeClass('fa-video');
+      $('#js-toggle-camera i').addClass('fa-video-slash');
+    }else{
+      $('#js-toggle-camera i').addClass('fa-video');
+      $('#js-toggle-camera i').removeClass('fa-video-slash');
+    }
+  });
+  $('#js-toggle-volume').on('click',function(){
+    if($('#js-toggle-volume i').hasClass('fa-volume-up')){
+      $('#js-toggle-volume i').removeClass('fa-volume-up');
+      $('#js-toggle-volume i').addClass('fa-volume-mute');
+    }else{
+      $('#js-toggle-volume i').addClass('fa-volume-up');
+      $('#js-toggle-volume i').removeClass('fa-volume-mute');
+    }
+  });
   let localStream;
 
   //Peer作成
