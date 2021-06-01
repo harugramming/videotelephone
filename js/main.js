@@ -1,3 +1,5 @@
+
+
 // カメラ、マイク、音声のON,OFF切り替え
 const toggleCamera = document.getElementById('js-toggle-camera');
 const toggleMicrophone = document.getElementById('js-toggle-microphone');
@@ -70,6 +72,10 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
   videoElm.play();
   // 着信時に相手にカメラ映像を返せるように、グローバル変数に保存しておく
   localStream = stream;
+
+  //カメラの初期状態はOFFにしておこう
+  localStream.getVideoTracks()[0].enabled = !localStream.getVideoTracks()[0].enabled;
+
 }).catch( error => {
   // 失敗時にはエラーログを出力
   console.error('mediaDevice.getUserMedia() error:', error);
