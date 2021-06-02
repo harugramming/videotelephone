@@ -19,7 +19,7 @@ main{
 }
 main #main-container #video-container{
   width: 80%;
-  height: calc(100vh - 92px);
+  height: calc(100vh - 118px);
   background-color: #9fa9ba;
 }
 main #main-container #video-container #video-wrapper{
@@ -65,7 +65,7 @@ main #main-container #video-container #video-wrapper .small_view{
 }
 #chat-container{
   width: 420px;
-  height: calc(100vh - 92px);
+  height: calc(100vh - 116px);
   background-color: #e0e1e2;
 }
 
@@ -80,7 +80,7 @@ main #main-container #video-container #video-wrapper .small_view{
 
 header{
   width: 100%;
-  height: 92px;
+  height: 82px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -110,3 +110,9 @@ header #control_container .icon-container{
 /*              */
 /* header end   */
 /*              */
+
+footer{
+  width: 100%;
+  height: 36px;
+  text-align: center;
+}
