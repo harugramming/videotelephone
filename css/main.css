@@ -1,5 +1,19 @@
-
-
+main{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+#main-container{
+  background-color: #e0e1e2;
+  flex: 1;
+  min-width: 680px;
+  height: 100vh;
+}
+#chat-container{
+  background-color: blue;
+  width: 420px;
+  height:100vh;
+}
 /*              */
 /* header start */
 /*              */
