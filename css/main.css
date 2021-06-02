@@ -15,7 +15,7 @@ main{
 #main-container{
   background-color: #e0e1e2;
   flex: 1;
-  min-width: 680px;
+  
 }
 main #main-container #video-container{
   width: 80%;
@@ -24,9 +24,13 @@ main #main-container #video-container{
 }
 main #main-container #video-container #video-wrapper{
   padding: 12px;
-}
-main #main-container #video-container #video-wrapper #my-video{
   width: 100%;
+}
+main #main-container #video-container #video-wrapper .big_view{
+  width: 100%;
+}
+main #main-container #video-container #video-wrapper .small_view{
+  width: 20%;
 }
 #chat-container{
   width: 420px;

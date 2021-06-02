@@ -1,4 +1,24 @@
 
+// カメラ映像の縮小化
+$('#my-video').on('click',function(){
+  console.log("ok");
+  if($('#my-video').hasClass('big_view')){
+    $('#my-video').removeClass('big_view');
+    $('#my-video').addClass('small_view');
+  }else{
+    $('#my-video').addClass('big_view');
+    $('#my-video').removeClass('small_view');
+  }
+});
+$('body').on('click', '#their-video' , function() {
+  if($('#their-video').hasClass('big_view')){
+    $('#their-video').removeClass('big_view');
+    $('#their-video').addClass('small_view');
+  }else{
+    $('#their-video').addClass('big_view');
+    $('#their-video').removeClass('small_view');
+  }
+});
 
 // カメラ、マイク、音声のON,OFF切り替え
 const toggleCamera = document.getElementById('js-toggle-camera');
@@ -90,9 +110,12 @@ const mediaConnection = peer.call(theirID, localStream);
 setEventListener(mediaConnection);
 };
 
+
+
 // イベントリスナを設置する関数
 const setEventListener = mediaConnection => {
 mediaConnection.on('stream', stream => {
+  $('#my-video').before("<video id='their-video' class='big_view' width='400px' autoplay playsinline></video>");
   // video要素にカメラ映像をセットして再生
   const videoElm = document.getElementById('their-video')
   videoElm.srcObject = stream;
