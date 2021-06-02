@@ -1,3 +1,12 @@
+html{
+  height:100vh;
+}
+body{
+  height: 100vh;
+}
+/*              */
+/* main start   */
+/*              */
 main{
   display: flex;
   flex-wrap: wrap;
@@ -7,13 +16,29 @@ main{
   background-color: #e0e1e2;
   flex: 1;
   min-width: 680px;
-  height: 100vh;
+}
+main #main-container #video-container{
+  width: 80%;
+  height: calc(100vh - 92px);
+  background-color: #9fa9ba;
+}
+main #main-container #video-container #video-wrapper{
+  padding: 12px;
+}
+main #main-container #video-container #video-wrapper #my-video{
+  width: 100%;
 }
 #chat-container{
-  background-color: blue;
   width: 420px;
-  height:100vh;
+  height: calc(100vh - 92px);
+  background-color: #e0e1e2;
 }
+
+/*              */
+/* main   end   */
+/*              */
+
+
 /*              */
 /* header start */
 /*              */
@@ -24,7 +49,8 @@ header{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: url("../img/green_00096.jpeg");
+  /* background-image: url("../img/green_00096.jpeg"); */
+  background-color: #3a546b;
   color: #fefefe;
 }
 header #title_container #title{
