@@ -32,6 +32,37 @@ main #main-container #video-container #video-wrapper .big_view{
 main #main-container #video-container #video-wrapper .small_view{
   width: 20%;
 }
+
+#input_container{
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  padding: 12px;
+
+}
+.fa-phone{
+  color: #fff;
+  font-size: 30px;
+}
+
+#input_container .icon-container{
+  width: 58px;
+  height: 58px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: chartreuse;
+}
+
+
+#their-id{
+  width: 272px;
+  height: 42px;
+  border-radius: 24px;
+  outline: none;
+}
 #chat-container{
   width: 420px;
   height: calc(100vh - 92px);
