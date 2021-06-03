@@ -2,21 +2,33 @@
 // カメラ映像の縮小化
 $('#my-video').on('click',function(){
   console.log("ok");
+// 相手の画面が表示されている場合のみ有効
+if($('#their-video').length){
   if($('#my-video').hasClass('big_view')){
-    $('#my-video').removeClass('big_view');
-    $('#my-video').addClass('small_view');
+      $('#my-video').removeClass('big_view');
+      $('#my-video').addClass('small_view');
+      $('#their-video').addClass('big_view');
+      $('#their-video').removeClass('small_view');
   }else{
     $('#my-video').addClass('big_view');
     $('#my-video').removeClass('small_view');
+    $('#their-video').removeClass('big_view');
+    $('#their-video').addClass('small_view');
   }
+}else{} //相手の画面が表示されていない場合、何もしない
 });
+
 $('body').on('click', '#their-video' , function() {
   if($('#their-video').hasClass('big_view')){
     $('#their-video').removeClass('big_view');
     $('#their-video').addClass('small_view');
+    $('#my-video').addClass('big_view');
+    $('#my-video').removeClass('small_view');
   }else{
     $('#their-video').addClass('big_view');
     $('#their-video').removeClass('small_view');
+    $('#my-video').removeClass('big_view');
+    $('#my-video').addClass('small_view');
   }
 });
 
@@ -115,6 +127,10 @@ setEventListener(mediaConnection);
 // イベントリスナを設置する関数
 const setEventListener = mediaConnection => {
 mediaConnection.on('stream', stream => {
+  //自分のカメラは縮小化
+  $('#my-video').removeClass('big_view');
+  $('#my-video').addClass('small_view');
+  //相手のカメラを表示
   $('#my-video').before("<video id='their-video' class='big_view' width='400px' autoplay playsinline></video>");
   // video要素にカメラ映像をセットして再生
   const videoElm = document.getElementById('their-video')
@@ -127,4 +143,5 @@ mediaConnection.on('stream', stream => {
 peer.on('call', mediaConnection => {
 mediaConnection.answer(localStream);
 setEventListener(mediaConnection);
+
 });

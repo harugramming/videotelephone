@@ -19,18 +19,29 @@ main{
 }
 main #main-container #video-container{
   width: 80%;
-  height: calc(100vh - 118px);
+  min-height: calc(100vh - 118px);
   background-color: #9fa9ba;
 }
 main #main-container #video-container #video-wrapper{
+  min-height: calc(100vh - 118px - 100px);
   padding: 12px;
   width: 100%;
+  height: 100%;
+}
+main #main-container #video-container #video-wrapper #video-wrapper_dummy{
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 main #main-container #video-container #video-wrapper .big_view{
+  position: absolute;
   width: 100%;
+  z-index: 1;
 }
 main #main-container #video-container #video-wrapper .small_view{
+  position: absolute;
   width: 20%;
+  z-index: 2;
 }
 
 #input_container{
