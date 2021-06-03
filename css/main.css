@@ -13,20 +13,21 @@ main{
   width: 100vw;
 }
 #main-container{
-  background-color: #e0e1e2;
+  background-color: #9fa9ba;
   flex: 1;
-  
 }
 main #main-container #video-container{
   width: 80%;
   min-height: calc(100vh - 118px);
   background-color: #9fa9ba;
+  margin: 0 auto;
 }
 main #main-container #video-container #video-wrapper{
   min-height: calc(100vh - 118px - 100px);
   padding: 12px;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 main #main-container #video-container #video-wrapper #video-wrapper_dummy{
   position: relative;
@@ -126,4 +127,33 @@ footer{
   width: 100%;
   height: 36px;
   text-align: center;
+}
+
+/* //レスポンシブ */
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .smartphone{
+    display: block !important;
+  }
+  header{
+    height: auto;
+    flex-flow: column;
+    }
+  header .my-number{
+    order:1;
+  }
+  header #control_container {
+    justify-content: center;
+    order: 2;
+  }
+  #title{
+    display: none;
+  }
+  main #main-container #video-container{
+    width: 100%;
+  }
+  main #main-container #video-container #video-wrapper{
+    padding: 0;
+  }
+
 }
