@@ -38,6 +38,7 @@ main #main-container #video-container #video-wrapper .big_view{
   position: absolute;
   width: 100%;
   z-index: 1;
+  max-height: 580px;
 }
 main #main-container #video-container #video-wrapper .small_view{
   position: absolute;
